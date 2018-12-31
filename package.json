@@ -1,5 +1,5 @@
 {
-  "name": "phaser-template",
+  "name": "flappy-bird",
   "version": "0.0.0",
   "description": "A template for building Phaser games.",
   "author": "Mark <mark@remarkablemark.org>",
@@ -14,13 +14,13 @@
     "release": "standard-version --no-verify",
     "start": "node scripts/start"
   },
-  "homepage": "https://remarkablegames.org/phaser-template/",
+  "homepage": "https://remarkablegames.org/flappy-bird/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/remarkablegames/phaser-template"
+    "url": "https://github.com/remarkablegames/flappy-bird"
   },
   "bugs": {
-    "url": "https://github.com/remarkablegames/phaser-template/issues"
+    "url": "https://github.com/remarkablegames/flappy-bird/issues"
   },
   "keywords": [
     "phaser",

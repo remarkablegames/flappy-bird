@@ -1,26 +1,26 @@
-# phaser-template
+# flappy-bird
 
 A template for building [Phaser](https://phaser.io/) games.
 
 The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)” tutorial.
 
-See [demo](https://remarkablegames.github.io/phaser-template/).
+See [demo](https://remarkablegames.github.io/flappy-bird/).
 
 ## Installation
 
 Clone repository:
 
 ```sh
-$ git clone https://github.com/remarkablegames/phaser-template.git
+$ git clone https://github.com/remarkablegames/flappy-bird.git
 ```
 
 Rename project:
 
 ```sh
-$ mv phaser-template my-game
+$ mv flappy-bird my-game
 $ cd my-game
-$ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
-$ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
+$ git grep -l flappy-bird | xargs sed -i '' -e 's/flappy-bird/my-game/g'
+$ git grep -l 'Flappy Bird' | xargs sed -i '' -e 's/Flappy Bird/My Game/g'
 ```
 
 You should also update the files:
@@ -51,7 +51,7 @@ Make first commit:
 
 ```sh
 $ git add .
-$ git commit -m "feat: initialize project from phaser-template"
+$ git commit -m "feat: initialize project from flappy-bird"
 ```
 
 > The commit message should follow the [Conventional Commits](https://conventionalcommits.org) format. (It becomes useful during a release.)
