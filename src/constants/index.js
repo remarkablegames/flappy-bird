@@ -3,7 +3,10 @@ export const SCENES = {
   MAIN: 'MAIN',
 };
 
-export const TEXTURES = {};
+export const TEXTURES = {
+  BIRD: 'BIRD',
+  PIPE: 'PIPE',
+};
 
 export default {
   SCENES,
