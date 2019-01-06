@@ -5,12 +5,13 @@ import registerServiceWorker from './registerServiceWorker';
 registerServiceWorker();
 
 const config = {
-  width: 800,
-  height: 600,
+  backgroundColor: '#71c5cf',
+  width: 400,
+  height: 490,
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 300 },
+      gravity: { y: 1000 },
       debug: process.env.NODE_ENV === 'development',
     },
   },
