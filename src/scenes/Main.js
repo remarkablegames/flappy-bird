@@ -18,10 +18,10 @@ export default class Main extends Scene {
     });
 
     // Check for overlap between bird and pipe.
-    this.physics.add.overlap(this.bird, this.pipes, this.restart, null, this);
+    this.physics.add.overlap(this.bird, this.pipes, this.hitPipe, null, this);
 
     // Generate row of pipes in intervals.
-    this.time.addEvent({
+    this.addPipesEvent = this.time.addEvent({
       callback: this.addPipes,
       callbackScope: this,
       delay: 1500,
@@ -57,12 +57,36 @@ export default class Main extends Scene {
     this.scoreText.text = this.score++;
   }
 
-  restart() {
-    this.scene.restart();
+  hitPipe() {
+    const { bird } = this;
+
+    // Do nothing if bird is dead. It means the bird is falling off the screen.
+    if (!bird.active) {
+      return;
+    }
+
+    // Kill the bird but keep it visible.
+    bird.setActive(false);
+
+    // Stop movement of all pipes.
+    this.pipes.setVelocityX(0);
+
+    // Prevent new pipes from being generated.
+    this.addPipesEvent.remove();
   }
 
   update() {
     const { bird } = this;
+
+    // Restart scene if bird is out of bounds.
+    if (bird.y < 0 || bird.y > 490) {
+      this.scene.restart();
+    }
+
+    // Do nothing if bird is dead. It means the bird is falling off the screen.
+    if (!bird.active) {
+      return;
+    }
 
     // Rotate the bird downwards if it's falling.
     if (bird.angle < 20) {
@@ -77,11 +101,6 @@ export default class Main extends Scene {
         angle: -20,
         duration: 100,
       });
-    }
-
-    // Restart scene if bird is out of bounds.
-    if (bird.y < 0 || bird.y > 490) {
-      this.restart();
     }
   }
 }
