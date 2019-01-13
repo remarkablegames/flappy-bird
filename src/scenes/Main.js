@@ -18,6 +18,15 @@ export default class Main extends Scene {
       runChildUpdate: true,
     });
 
+    // Check for overlap between bird and pipe.
+    this.physics.add.overlap(
+      sprites.bird,
+      groups.pipes,
+      this.restart,
+      null,
+      this
+    );
+
     // Generate row of pipes in intervals.
     this.time.addEvent({
       callback: this.addPipes,
