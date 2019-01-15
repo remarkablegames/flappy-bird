@@ -35,6 +35,15 @@ export default class Main extends Scene {
       loop: true,
     });
 
+    // The score.
+    this.score = 0;
+
+    // Add score text.
+    this.scoreText = this.add.text(20, 20, this.score, {
+      font: '32px Arial',
+      fill: '#fff',
+    });
+
     // Add key object for spacebar.
     this.spacebar = this.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
   }
@@ -50,6 +59,9 @@ export default class Main extends Scene {
       }
       groups.pipes.get(400, index * 60 + 10).init();
     }
+
+    // Increase the score by 1.
+    this.scoreText.text = this.score++;
   }
 
   restart() {
