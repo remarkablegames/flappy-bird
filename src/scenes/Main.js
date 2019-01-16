@@ -65,7 +65,7 @@ export default class Main extends Scene {
   }
 
   restart() {
-    this.scene.start(SCENES.MAIN);
+    this.scene.restart();
   }
 
   update() {
@@ -76,7 +76,7 @@ export default class Main extends Scene {
       bird.body.setVelocityY(-350);
     }
 
-    // Restart game if bird is out of bounds.
+    // Restart scene if bird is out of bounds.
     if (bird.y < 0 || bird.y > 490) {
       this.restart();
     }
