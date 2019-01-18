@@ -1,6 +1,5 @@
 import { Bird, Pipe } from '../sprites';
 import { Input, Scene } from 'phaser';
-import { groups, sprites } from '../shared';
 import { SCENES } from '../constants';
 
 export default class Main extends Scene {
@@ -10,22 +9,16 @@ export default class Main extends Scene {
 
   create() {
     // Add bird sprite.
-    sprites.bird = new Bird(this, 100, 245);
+    this.bird = new Bird(this, 100, 245);
 
     // Add pipes group.
-    groups.pipes = this.physics.add.group({
+    this.pipes = this.physics.add.group({
       classType: Pipe,
       runChildUpdate: true,
     });
 
     // Check for overlap between bird and pipe.
-    this.physics.add.overlap(
-      sprites.bird,
-      groups.pipes,
-      this.restart,
-      null,
-      this
-    );
+    this.physics.add.overlap(this.bird, this.pipes, this.restart, null, this);
 
     // Generate row of pipes in intervals.
     this.time.addEvent({
@@ -57,7 +50,7 @@ export default class Main extends Scene {
       if (index === holeIndex || index === holeIndex + 1) {
         continue;
       }
-      groups.pipes.get(400, index * 60 + 10).init();
+      this.pipes.get(400, index * 60 + 10).init();
     }
 
     // Increase the score by 1.
@@ -69,7 +62,7 @@ export default class Main extends Scene {
   }
 
   update() {
-    const { bird } = sprites;
+    const { bird } = this;
 
     // Jump if spacebar is pressed.
     if (this.spacebar.isDown) {
