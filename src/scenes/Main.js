@@ -64,9 +64,19 @@ export default class Main extends Scene {
   update() {
     const { bird } = this;
 
-    // Jump if spacebar is pressed.
+    // Rotate the bird downwards if it's falling.
+    if (bird.angle < 20) {
+      bird.angle++;
+    }
+
+    // Jump and rotate the bird upwards if spacebar is pressed.
     if (this.spacebar.isDown) {
       bird.body.setVelocityY(-350);
+      this.tweens.add({
+        targets: bird,
+        angle: -20,
+        duration: 100,
+      });
     }
 
     // Restart scene if bird is out of bounds.
