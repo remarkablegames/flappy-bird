@@ -93,8 +93,13 @@ export default class Main extends Scene {
       bird.angle++;
     }
 
-    // Jump and rotate the bird upwards if spacebar is pressed.
-    if (this.spacebar.isDown) {
+    const { activePointer } = this.input;
+
+    // Jump and rotate the bird upwards if spacebar is pressed or left pointer is down.
+    if (
+      this.spacebar.isDown ||
+      (activePointer.isDown && activePointer.buttons === 1)
+    ) {
       bird.body.setVelocityY(-350);
       this.tweens.add({
         targets: bird,
