@@ -16,6 +16,7 @@ const config = {
     },
   },
   scene: [Boot, Main],
+  disableContextMenu: true,
 };
 
 new Phaser.Game(config);
