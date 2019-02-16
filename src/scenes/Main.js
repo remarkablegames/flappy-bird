@@ -8,8 +8,9 @@ export default class Main extends Scene {
   }
 
   create() {
-    // Add bird sprite.
+    // Add bird sprite and bring it to the front.
     this.bird = new Bird(this, 100, 245);
+    this.bird.setDepth(1);
 
     // Add pipes group.
     this.pipes = this.physics.add.group({
@@ -31,11 +32,12 @@ export default class Main extends Scene {
     // The score.
     this.score = 0;
 
-    // Add score text.
+    // Add score text and bring it to the front.
     this.scoreText = this.add.text(20, 20, this.score, {
       font: '32px Arial',
       fill: '#fff',
     });
+    this.scoreText.setDepth(1);
 
     // Add key object for spacebar.
     this.spacebar = this.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
