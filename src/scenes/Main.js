@@ -1,6 +1,6 @@
 import { Bird, Pipe } from '../sprites';
-import { Input, Scene } from 'phaser';
-import { SCENES, SOUNDS } from '../constants';
+import { SCENES } from '../constants';
+import { Scene } from 'phaser';
 
 export default class Main extends Scene {
   constructor() {
@@ -38,12 +38,6 @@ export default class Main extends Scene {
       fill: '#fff',
     });
     this.scoreText.setDepth(1);
-
-    // Add key object for spacebar.
-    this.spacebar = this.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
-
-    // The jump sound.
-    this.jumpSound = this.sound.add(SOUNDS.JUMP);
   }
 
   addPipes() {
@@ -88,30 +82,6 @@ export default class Main extends Scene {
       this.scene.restart();
     }
 
-    // Do nothing if bird is dead. It means the bird is falling off the screen.
-    if (!bird.active) {
-      return;
-    }
-
-    // Rotate the bird downwards if it's falling.
-    if (bird.angle < 20) {
-      bird.angle++;
-    }
-
-    const { activePointer } = this.input;
-
-    // Jump and rotate the bird upwards if spacebar is pressed or left pointer is down.
-    if (
-      this.spacebar.isDown ||
-      (activePointer.isDown && activePointer.buttons === 1)
-    ) {
-      this.jumpSound.play();
-      bird.body.setVelocityY(-350);
-      this.tweens.add({
-        targets: bird,
-        angle: -20,
-        duration: 100,
-      });
-    }
+    bird.update();
   }
 }
