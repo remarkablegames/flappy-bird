@@ -8,6 +8,10 @@ const config = {
   backgroundColor: '#71c5cf',
   width: 400,
   height: 490,
+  title: 'Flappy Bird',
+  url: process.env.HOMEPAGE,
+  version: process.env.VERSION,
+  scene: [Boot, Main],
   physics: {
     default: 'arcade',
     arcade: {
@@ -15,7 +19,6 @@ const config = {
       debug: process.env.NODE_ENV === 'development',
     },
   },
-  scene: [Boot, Main],
   disableContextMenu: true,
 };
 
