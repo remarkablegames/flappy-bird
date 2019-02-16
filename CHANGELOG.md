@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/remarkablegames/flappy-bird/compare/v0.1.0...v0.2.0) (2019-02-16)
+
+
+### Features
+
+* **assets:** add jump.wav ([bd6e8b9](https://github.com/remarkablegames/flappy-bird/commit/bd6e8b9))
+* **index:** set title, url, and version in config ([0f28a8a](https://github.com/remarkablegames/flappy-bird/commit/0f28a8a))
+* **index:** update config to disable right-click or context menu ([baa76d2](https://github.com/remarkablegames/flappy-bird/commit/baa76d2))
+* **scenes:** bring bird sprite and score text to front ([5c9b0fc](https://github.com/remarkablegames/flappy-bird/commit/5c9b0fc))
+* **scenes:** load jump sound in Boot & play when activated in Main ([a3bb398](https://github.com/remarkablegames/flappy-bird/commit/a3bb398))
+* **scenes:** make bird jump when left pointer is down ([da45121](https://github.com/remarkablegames/flappy-bird/commit/da45121))
+* **sprites:** add a 200ms jump delay ([eff3a94](https://github.com/remarkablegames/flappy-bird/commit/eff3a94))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2019-01-25)
 
