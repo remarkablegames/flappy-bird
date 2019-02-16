@@ -1,6 +1,8 @@
 import { GameObjects, Input } from 'phaser';
 import { SOUNDS, TEXTURES } from '../constants';
 
+const JUMP_DELAY = 200;
+
 export default class Bird extends GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURES.BIRD);
@@ -16,6 +18,8 @@ export default class Bird extends GameObjects.Sprite {
 
     // Add key object for spacebar.
     this.spacebar = scene.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
+
+    this.lastJumped = 0;
   }
 
   jump() {
@@ -28,7 +32,7 @@ export default class Bird extends GameObjects.Sprite {
     this.jumpSound.play();
   }
 
-  update() {
+  update(time) {
     // Do nothing if dead. (The sprite should be falling off the screen.)
     if (!this.active) {
       return;
@@ -43,10 +47,12 @@ export default class Bird extends GameObjects.Sprite {
 
     // Jump and rotate upwards when spacebar is pressed or left pointer is down.
     if (
-      this.spacebar.isDown ||
-      (activePointer.isDown && activePointer.buttons === 1)
+      time > this.lastJumped &&
+      (this.spacebar.isDown ||
+        (activePointer.isDown && activePointer.buttons === 1))
     ) {
       this.jump();
+      this.lastJumped = time + JUMP_DELAY;
     }
   }
 }

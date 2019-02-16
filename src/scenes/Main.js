@@ -74,7 +74,7 @@ export default class Main extends Scene {
     this.addPipesEvent.remove();
   }
 
-  update() {
+  update(time, delta) {
     const { bird } = this;
 
     // Restart scene if bird is out of bounds.
@@ -82,6 +82,6 @@ export default class Main extends Scene {
       this.scene.restart();
     }
 
-    bird.update();
+    bird.update(time);
   }
 }
