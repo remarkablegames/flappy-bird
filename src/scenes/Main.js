@@ -1,6 +1,6 @@
 import { Bird, Pipe } from '../sprites';
 import { Input, Scene } from 'phaser';
-import { SCENES } from '../constants';
+import { SCENES, SOUNDS } from '../constants';
 
 export default class Main extends Scene {
   constructor() {
@@ -41,6 +41,9 @@ export default class Main extends Scene {
 
     // Add key object for spacebar.
     this.spacebar = this.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
+
+    // The jump sound.
+    this.jumpSound = this.sound.add(SOUNDS.JUMP);
   }
 
   addPipes() {
@@ -102,6 +105,7 @@ export default class Main extends Scene {
       this.spacebar.isDown ||
       (activePointer.isDown && activePointer.buttons === 1)
     ) {
+      this.jumpSound.play();
       bird.body.setVelocityY(-350);
       this.tweens.add({
         targets: bird,

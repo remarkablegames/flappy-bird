@@ -3,6 +3,10 @@ export const SCENES = {
   MAIN: 'MAIN',
 };
 
+export const SOUNDS = {
+  JUMP: 'JUMP',
+};
+
 export const TEXTURES = {
   BIRD: 'BIRD',
   PIPE: 'PIPE',
@@ -10,5 +14,6 @@ export const TEXTURES = {
 
 export default {
   SCENES,
+  SOUNDS,
   TEXTURES,
 };
