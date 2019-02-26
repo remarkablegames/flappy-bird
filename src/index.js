@@ -1,8 +1,8 @@
 import './index.css';
 import { Boot, Main } from './scenes';
 import Phaser from 'phaser';
-import registerServiceWorker from './registerServiceWorker';
-registerServiceWorker();
+// import registerServiceWorker from './registerServiceWorker';
+// registerServiceWorker();
 
 const config = {
   backgroundColor: '#71c5cf',
