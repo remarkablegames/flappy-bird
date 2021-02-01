@@ -1,9 +1,9 @@
 import { Bird, Pipe } from '../sprites';
-import { SCENES } from '../constants';
+import { SCENE_MAIN } from '../constants';
 
 class Main extends Phaser.Scene {
   constructor() {
-    super({ key: SCENES.MAIN });
+    super({ key: SCENE_MAIN });
   }
 
   create() {

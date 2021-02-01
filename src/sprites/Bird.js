@@ -1,10 +1,10 @@
-import { SOUNDS, TEXTURES } from '../constants';
+import { SOUND_JUMP, TEXTURE_BIRD } from '../constants';
 
 const JUMP_DELAY = 200;
 
 class Bird extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, TEXTURES.BIRD);
+    super(scene, x, y, TEXTURE_BIRD);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
@@ -13,7 +13,7 @@ class Bird extends Phaser.GameObjects.Sprite {
     scene.physics.world.enable(this);
 
     // The jump sound.
-    this.jumpSound = scene.sound.add(SOUNDS.JUMP);
+    this.jumpSound = scene.sound.add(SOUND_JUMP);
 
     // Add key object for spacebar.
     this.spacebar = scene.input.keyboard.addKey(

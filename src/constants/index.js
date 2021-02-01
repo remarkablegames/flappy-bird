@@ -1,13 +1,7 @@
-export const SCENES = {
-  BOOT: 'BOOT',
-  MAIN: 'MAIN',
-};
+export const SCENE_BOOT = 'BOOT';
+export const SCENE_MAIN = 'MAIN';
 
-export const SOUNDS = {
-  JUMP: 'JUMP',
-};
+export const SOUND_JUMP = 'JUMP';
 
-export const TEXTURES = {
-  BIRD: 'BIRD',
-  PIPE: 'PIPE',
-};
+export const TEXTURE_BIRD = 'BIRD';
+export const TEXTURE_PIPE = 'PIPE';

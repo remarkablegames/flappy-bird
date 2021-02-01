@@ -1,18 +1,24 @@
-import { SCENES, SOUNDS, TEXTURES } from '../constants';
+import {
+  SCENE_BOOT,
+  SCENE_MAIN,
+  SOUND_JUMP,
+  TEXTURE_BIRD,
+  TEXTURE_PIPE,
+} from '../constants';
 
 class Boot extends Phaser.Scene {
   constructor() {
-    super({ key: SCENES.BOOT });
+    super({ key: SCENE_BOOT });
   }
 
   preload() {
-    this.load.audio(SOUNDS.JUMP, require('../assets/jump.wav').default);
-    this.load.image(TEXTURES.BIRD, require('../assets/bird.png').default);
-    this.load.image(TEXTURES.PIPE, require('../assets/pipe.png').default);
+    this.load.audio(SOUND_JUMP, require('../assets/jump.wav').default);
+    this.load.image(TEXTURE_BIRD, require('../assets/bird.png').default);
+    this.load.image(TEXTURE_PIPE, require('../assets/pipe.png').default);
   }
 
   create() {
-    this.scene.start(SCENES.MAIN);
+    this.scene.start(SCENE_MAIN);
   }
 }
 

@@ -1,8 +1,8 @@
-import { TEXTURES } from '../constants';
+import { TEXTURE_PIPE } from '../constants';
 
 class Pipe extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, TEXTURES.PIPE);
+    super(scene, x, y, TEXTURE_PIPE);
 
     // Reset drawing position of image to the top-left.
     this.setOrigin(0);
