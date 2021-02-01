@@ -1,5 +1,5 @@
 import { Bird, Pipe } from '../sprites';
-import { SCENE_MAIN } from '../constants';
+import { SCENE_MAIN, SCENE_TITLE } from '../constants';
 
 class Main extends Phaser.Scene {
   constructor() {
@@ -78,7 +78,7 @@ class Main extends Phaser.Scene {
 
     // Restart scene if bird is out of bounds.
     if (bird.y < 0 || bird.y > 490) {
-      this.scene.restart();
+      this.scene.start(SCENE_TITLE);
     }
 
     bird.update(time);

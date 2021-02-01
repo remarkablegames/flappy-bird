@@ -1,5 +1,5 @@
 import './index.css';
-import { Boot, Main } from './scenes';
+import { Boot, Title, Main } from './scenes';
 
 const config = {
   backgroundColor: '#71c5cf',
@@ -8,7 +8,7 @@ const config = {
   title: 'Flappy Bird',
   url: process.env.WEB_APP_HOMEPAGE,
   version: process.env.WEB_APP_VERSION,
-  scene: [Boot, Main],
+  scene: [Boot, Title, Main],
   physics: {
     default: 'arcade',
     arcade: {

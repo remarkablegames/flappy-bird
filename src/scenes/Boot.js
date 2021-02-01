@@ -1,6 +1,6 @@
 import {
   SCENE_BOOT,
-  SCENE_MAIN,
+  SCENE_TITLE,
   SOUND_JUMP,
   TEXTURE_BIRD,
   TEXTURE_PIPE,
@@ -18,7 +18,7 @@ class Boot extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start(SCENE_MAIN);
+    this.scene.start(SCENE_TITLE);
   }
 }
 
