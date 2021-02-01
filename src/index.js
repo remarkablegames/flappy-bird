@@ -19,7 +19,7 @@ const config = {
       debug: process.env.NODE_ENV === 'development',
     },
   },
-  disableContextMenu: true,
+  disableContextMenu: process.env.NODE_ENV !== 'development',
 };
 
 new Phaser.Game(config);
