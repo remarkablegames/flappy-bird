@@ -1,16 +1,13 @@
 import './index.css';
 import { Boot, Main } from './scenes';
-import Phaser from 'phaser';
-// import registerServiceWorker from './registerServiceWorker';
-// registerServiceWorker();
 
 const config = {
   backgroundColor: '#71c5cf',
   width: 400,
   height: 490,
   title: 'Flappy Bird',
-  url: process.env.HOMEPAGE,
-  version: process.env.VERSION,
+  url: process.env.WEB_APP_HOMEPAGE,
+  version: process.env.WEB_APP_VERSION,
   scene: [Boot, Main],
   physics: {
     default: 'arcade',

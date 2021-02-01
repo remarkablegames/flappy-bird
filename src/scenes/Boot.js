@@ -1,19 +1,19 @@
 import { SCENES, SOUNDS, TEXTURES } from '../constants';
-import { Scene } from 'phaser';
 
-export default class Boot extends Scene {
+class Boot extends Phaser.Scene {
   constructor() {
     super({ key: SCENES.BOOT });
   }
 
   preload() {
-    const { load } = this;
-    load.audio(SOUNDS.JUMP, require('../assets/jump.wav'));
-    load.image(TEXTURES.BIRD, require('../assets/bird.png'));
-    load.image(TEXTURES.PIPE, require('../assets/pipe.png'));
+    this.load.audio(SOUNDS.JUMP, require('../assets/jump.wav').default);
+    this.load.image(TEXTURES.BIRD, require('../assets/bird.png').default);
+    this.load.image(TEXTURES.PIPE, require('../assets/pipe.png').default);
   }
 
   create() {
     this.scene.start(SCENES.MAIN);
   }
 }
+
+export default Boot;

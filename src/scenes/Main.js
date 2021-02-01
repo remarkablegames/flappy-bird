@@ -1,8 +1,7 @@
 import { Bird, Pipe } from '../sprites';
 import { SCENES } from '../constants';
-import { Scene } from 'phaser';
 
-export default class Main extends Scene {
+class Main extends Phaser.Scene {
   constructor() {
     super({ key: SCENES.MAIN });
   }
@@ -85,3 +84,5 @@ export default class Main extends Scene {
     bird.update(time);
   }
 }
+
+export default Main;

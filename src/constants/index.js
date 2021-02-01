@@ -11,9 +11,3 @@ export const TEXTURES = {
   BIRD: 'BIRD',
   PIPE: 'PIPE',
 };
-
-export default {
-  SCENES,
-  SOUNDS,
-  TEXTURES,
-};

@@ -1,9 +1,8 @@
-import { GameObjects, Input } from 'phaser';
 import { SOUNDS, TEXTURES } from '../constants';
 
 const JUMP_DELAY = 200;
 
-export default class Bird extends GameObjects.Sprite {
+class Bird extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURES.BIRD);
 
@@ -17,7 +16,9 @@ export default class Bird extends GameObjects.Sprite {
     this.jumpSound = scene.sound.add(SOUNDS.JUMP);
 
     // Add key object for spacebar.
-    this.spacebar = scene.input.keyboard.addKey(Input.Keyboard.KeyCodes.SPACE);
+    this.spacebar = scene.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.SPACE
+    );
 
     this.lastJumped = 0;
   }
@@ -56,3 +57,5 @@ export default class Bird extends GameObjects.Sprite {
     }
   }
 }
+
+export default Bird;
