@@ -1,6 +1,21 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.0.0](https://github.com/remarkablegames/flappy-bird/compare/v0.2.0...v1.0.0) (2021-02-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate project to latest `phaser-template`
+
+https://github.com/remarkablegames/phaser-template
+
+### Features
+
+* **scenes:** add Title scene ([6779dcb](https://github.com/remarkablegames/flappy-bird/commit/6779dcbaad7afd80543df05107f1d4f12d634e36))
+* migrate to `@descriptive/web-scripts` ([560f8d3](https://github.com/remarkablegames/flappy-bird/commit/560f8d31330e072ebd9dacb5047b24bb5aa13d48))
+* **index:** comment out registerServiceWorker ([99a9c46](https://github.com/remarkablegames/flappy-bird/commit/99a9c46434c6239fda5ed04ece9631826f07c2d1))
 
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/remarkablegames/flappy-bird/compare/v0.1.0...v0.2.0) (2019-02-16)
